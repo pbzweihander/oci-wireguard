@@ -8,4 +8,4 @@ trap stop SIGTERM SIGINT SIGQUIT
 
 wg-quick up /etc/wireguard/wg0.conf
 echo "Public key '$(sudo cat /etc/wireguard/privatekey | wg pubkey)'"
-nc -l -p 3000
+socat TCP-LISTEN:3000,fork FD:1

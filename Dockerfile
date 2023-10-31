@@ -1,6 +1,6 @@
 FROM alpine:3
 
-RUN apk add --no-cache wireguard-tools sudo
+RUN apk add --no-cache wireguard-tools sudo socat
 
 RUN addgroup -g 1000 wireguard && \
   adduser -u 1000 -G wireguard -h /home/wireguard -D wireguard && \
