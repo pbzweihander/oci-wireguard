@@ -9,5 +9,4 @@ trap stop SIGTERM SIGINT SIGQUIT
 
 wg-quick up /etc/wireguard/wg0.conf
 echo "Public key '$(sudo cat /etc/wireguard/privatekey | wg pubkey)'"
-sleep infinity &
-wait $!
+nc -l -p 3000
