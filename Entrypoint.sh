@@ -1,5 +1,4 @@
 #!/bin/sh
-set -e
 
 stop () {
     wg-quick down wg0
