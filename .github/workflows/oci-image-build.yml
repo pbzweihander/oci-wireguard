@@ -3,13 +3,11 @@ name: 'Build Wireguard Image'
 on:
   workflow_dispatch:
   schedule:
-    - cron: '22 4 * * *'
+  - cron: '22 4 * * *'
   push:
     branches:
-      - main
-  pull_request:
-    branches:
-      - main
+    - main
+
 jobs:
   build:
     name: 'OCI'
@@ -20,5 +18,5 @@ jobs:
       security-events: write
       id-token: write
     with:
-      registry: ghcr.io/bryopsida
-      image_name: wireguard
+      registry: ghcr.io
+      image_name: ${{ github.repository }}
